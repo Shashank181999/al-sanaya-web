@@ -296,7 +296,7 @@ function Lightbox({
           />
         </div>
 
-        <div className="px-5 sm:px-7 py-4 sm:py-5 border-t border-slate-100 flex items-center justify-between gap-4 flex-shrink-0">
+        <div className="px-5 sm:px-7 py-4 sm:py-5 border-t border-slate-100 flex-shrink-0">
           <div className="min-w-0">
             {subtitle && (
               <p className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-navy-900 font-semibold truncate">
@@ -307,9 +307,6 @@ function Lightbox({
               {title}
             </h3>
           </div>
-          <span className="text-xs text-slate-400 hidden md:inline whitespace-nowrap">
-            Press Esc to close
-          </span>
         </div>
       </div>
     </div>
