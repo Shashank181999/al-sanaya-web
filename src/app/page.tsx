@@ -56,7 +56,6 @@ const services = [
 
 const differentiators = [
   { value: 20, suffix: "+", label: "Years of Service" },
-  { value: 50, suffix: "+", label: "Skilled Personnel" },
   { value: 14, suffix: "+", label: "Landmark Projects" },
   { value: 4, suffix: "", label: "Product Catalogues" },
 ];
@@ -177,7 +176,7 @@ export default function HomePage() {
         <div className="absolute inset-0 grid-pattern opacity-30" />
         <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-white/[0.03] blur-3xl" />
         <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-white/[0.03] blur-3xl" />
-        <StaggerGroup className="container-x relative grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+        <StaggerGroup className="container-x relative grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-10">
           {differentiators.map((d, i) => (
             <StaggerItem key={d.label} direction={i < 2 ? "left" : "right"}>
               <div className="border-l-2 border-white/20 pl-5">

@@ -6,7 +6,6 @@ export const company = {
     "Trading and contracting partner for the supply, testing & commissioning of electrical and mechanical equipment to oil & gas, utilities and construction across the GCC and the wider MENA region.",
   yearsExperience: 20,
   branches: 1,
-  personnel: 50,
   brands: ["Linkk", "Megaduct"],
   email: "info@sanayate.com",
   primaryPhone: "+971 4 835 2303",
