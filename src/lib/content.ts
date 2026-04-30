@@ -127,15 +127,15 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  { name: "Marina 101", location: "Dubai, UAE", image: "/images/projects/marina-101.jpg" },
+  { name: "Marina 101", location: "Dubai, UAE", image: "/images/projects/marina-101.webp" },
   { name: "W Hotel", location: "Amman, Jordan", image: "/images/projects/w-hotel-amman.jpg" },
   { name: "Atria", location: "UAE", image: "/images/projects/atria.webp" },
-  { name: "Bay Central Tower", location: "UAE", image: "/images/projects/bay-central-tower.jpg" },
+  { name: "Bay Central Tower", location: "UAE", image: "/images/projects/bay-central-tower.webp" },
   { name: "Levanto", location: "UAE", image: "/images/projects/levanto.jpg" },
-  { name: "OZone Residence", location: "UAE", image: "/images/projects/ozone-residence.jpg" },
-  { name: "Al Bateen Tower", location: "UAE", image: "/images/projects/al-bateen-tower.jpg" },
+  { name: "OZone Residence", location: "UAE", image: "/images/projects/ozone-residence.webp" },
+  { name: "Al Bateen Tower", location: "UAE", image: "/images/projects/al-bateen-tower.webp" },
   { name: "Al Batha Tower", location: "UAE", image: "/images/projects/al-batha-tower.jpg" },
-  { name: "Al Ain Ahlia", location: "UAE", image: "/images/projects/al-ain-ahlia.jpg" },
+  { name: "Al Ain Ahlia", location: "UAE", image: "/images/projects/al-ain-ahlia.webp" },
   { name: "Fujairah Tower", location: "UAE", image: "/images/projects/fujairah-tower.webp" },
   { name: "Escan Tower", location: "UAE", image: "/images/projects/escan-tower.webp" },
   { name: "Al Thuraya", location: "Qatar", image: "/images/projects/al-thuraya.jpg" },

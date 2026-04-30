@@ -306,7 +306,7 @@ export default function ProductsPage() {
               className="group inline-flex items-center gap-4 bg-navy-900 text-white rounded-xl px-5 py-4 hover:bg-navy-800 hover:-translate-y-0.5 transition-all shadow-sm hover:shadow-lg"
             >
               <Image
-                src="/images/sanayate-pdf.png"
+                src="/images/sanayate-pdf.webp"
                 alt=""
                 width={44}
                 height={44}

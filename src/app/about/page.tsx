@@ -200,7 +200,7 @@ export default function AboutPage() {
           <StaggerGroup className="grid sm:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto">
             <StaggerItem direction="left">
               <MediaCard
-                image="/images/iso.png"
+                image="/images/iso.webp"
                 title="ISO Certified"
                 subtitle="Click to view"
                 variant="certificate"
@@ -208,7 +208,7 @@ export default function AboutPage() {
             </StaggerItem>
             <StaggerItem direction="right">
               <MediaCard
-                image="/images/quality-policy.png"
+                image="/images/quality-policy.webp"
                 title="Quality Policy"
                 subtitle="Click to view"
                 variant="certificate"
