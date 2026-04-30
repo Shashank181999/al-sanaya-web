@@ -242,17 +242,18 @@ function Lightbox({
   variant: Variant;
   onClose: () => void;
 }) {
+  const [loaded, setLoaded] = useState(false);
   return (
     <div
       role="dialog"
       aria-modal="true"
       aria-label={title}
       onClick={onClose}
-      className="fixed inset-0 z-[100] bg-navy-900/90 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 md:p-10"
+      className="fixed inset-0 z-[100] bg-navy-900/90 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 md:p-10 animate-[fadeIn_0.2s_ease-out]"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative bg-white rounded-2xl flex flex-col overflow-hidden shadow-2xl"
+        className="relative bg-white rounded-2xl flex flex-col overflow-hidden shadow-2xl w-full"
         style={{
           maxHeight: "calc(100dvh - 1.5rem)",
           maxWidth: "min(95vw, 1100px)",
@@ -278,17 +279,23 @@ function Lightbox({
           </svg>
         </button>
 
-        <div className="relative bg-slate-50 flex items-center justify-center min-h-[260px]">
+        <div className="relative bg-slate-50 flex items-center justify-center w-full aspect-[4/3] sm:aspect-[16/10]">
+          {!loaded && (
+            <div
+              aria-hidden
+              className="absolute h-9 w-9 rounded-full border-2 border-slate-300 border-t-navy-900 animate-spin"
+            />
+          )}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={image}
             alt={title}
-            className={
-              variant === "project" ? "block" : "block p-4 sm:p-6"
-            }
+            decoding="async"
+            onLoad={() => setLoaded(true)}
+            className={`absolute inset-0 m-auto max-w-full max-h-full transition-opacity duration-300 ${
+              loaded ? "opacity-100" : "opacity-0"
+            } ${variant === "project" ? "" : "p-4 sm:p-6"}`}
             style={{
-              maxWidth: "100%",
-              maxHeight: "calc(100dvh - 180px)",
               width: "auto",
               height: "auto",
               objectFit: "contain",
