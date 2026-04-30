@@ -71,7 +71,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Link
             href="/contact"
-            className="hidden md:inline-flex btn-primary text-sm py-2.5 px-5"
+            className="hidden lg:inline-flex btn-primary text-sm py-2.5 px-5"
           >
             Get a Quote
           </Link>
