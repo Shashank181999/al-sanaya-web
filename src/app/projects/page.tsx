@@ -46,7 +46,7 @@ export default function ProjectsPage() {
       <section className="py-16 md:py-24 bg-navy-900 text-white">
         <Reveal className="container-x grid grid-cols-3 gap-6 md:gap-8 text-center">
           <Stat value={`${projects.length}+`} label="Landmark Projects" />
-          <Stat value="GCC & MENA" label="Regional Footprint" />
+          <Stat value="GCC · MENA" label="Regional Footprint" />
           <Stat value="20+" label="Years of Service" />
         </Reveal>
       </section>
@@ -55,9 +55,16 @@ export default function ProjectsPage() {
 }
 
 function Stat({ value, label }: { value: string; label: string }) {
+  const isLong = value.length > 4;
   return (
     <div>
-      <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+      <p
+        className={`font-bold text-white whitespace-nowrap tracking-tight ${
+          isLong
+            ? "text-xl sm:text-2xl md:text-3xl"
+            : "text-3xl sm:text-4xl md:text-5xl"
+        }`}
+      >
         {value}
       </p>
       <p className="mt-2 text-[11px] sm:text-sm text-slate-400 uppercase tracking-wider">

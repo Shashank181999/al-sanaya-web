@@ -78,18 +78,20 @@ export default function AboutPage() {
               specialists serving prestigious construction and industrial
               clients across the region.
             </p>
-            <div className="mt-8 grid grid-cols-3 gap-6 max-w-sm">
+            <div className="mt-8 flex flex-wrap items-start gap-x-8 gap-y-5 max-w-lg">
               <div>
-                <p className="text-3xl font-bold text-navy-900">20+</p>
-                <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Years</p>
+                <p className="text-3xl font-bold text-navy-900 leading-none">20+</p>
+                <p className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider mt-2">Years</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-navy-900">GCC &amp; MENA</p>
-                <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Coverage</p>
+                <p className="text-3xl font-bold text-navy-900 leading-none">50+</p>
+                <p className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider mt-2">Team</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-navy-900">50+</p>
-                <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Team</p>
+                <p className="text-2xl font-bold text-navy-900 leading-none whitespace-nowrap tracking-tight">
+                  GCC <span className="text-slate-400 font-medium">·</span> MENA
+                </p>
+                <p className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider mt-2">Coverage</p>
               </div>
             </div>
           </Reveal>

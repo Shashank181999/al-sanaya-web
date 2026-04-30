@@ -48,7 +48,7 @@ export default function ContactPage() {
               <p className="text-xs text-slate-500 uppercase tracking-[0.18em] font-semibold">
                 {q.title}
               </p>
-              <p className="text-2xl md:text-3xl font-bold text-navy-900 mt-2">
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mt-2 whitespace-nowrap tracking-tight">
                 {q.value}
               </p>
               <p className="text-sm text-slate-600 mt-2">{q.body}</p>
