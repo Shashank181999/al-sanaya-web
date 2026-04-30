@@ -15,7 +15,7 @@ export default function ProjectsPage() {
       <PageHero
         eyebrow="Projects"
         title="Powering landmark developments across the GCC."
-        description="Linkk and Megaduct busduct trunking systems have successfully been delivered to many projects across the UAE and the wider GCC region."
+        description="Linkk and Megaduct busduct trunking systems have successfully been delivered to many projects across the UAE and the wider MENA region."
       />
 
       <section className="py-16 md:py-24">
@@ -47,7 +47,7 @@ export default function ProjectsPage() {
         <Reveal className="container-x grid grid-cols-3 gap-6 md:gap-8 text-center">
           <Stat value={`${projects.length}+`} label="Landmark Projects" />
           <Stat value="GCC" label="Regional Footprint" />
-          <Stat value="16+" label="Years of Service" />
+          <Stat value="20+" label="Years of Service" />
         </Reveal>
       </section>
     </>

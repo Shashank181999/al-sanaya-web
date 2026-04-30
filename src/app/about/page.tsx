@@ -54,7 +54,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="Implementing quality, engineering trust."
-        description="Al Sanaya Technical Equipment LLC has been a trusted supplier and contractor for the oil & gas, utilities and construction sectors across the GCC for over 16 years."
+        description="Al Sanaya Technical Equipment LLC has been a trusted supplier and contractor for the oil & gas, utilities and construction sectors across the GCC for over 20 years."
       />
 
       <section className="py-16 md:py-24">
@@ -80,7 +80,7 @@ export default function AboutPage() {
             </p>
             <div className="mt-8 grid grid-cols-3 gap-6 max-w-sm">
               <div>
-                <p className="text-3xl font-bold text-navy-900">16+</p>
+                <p className="text-3xl font-bold text-navy-900">20+</p>
                 <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Years</p>
               </div>
               <div>

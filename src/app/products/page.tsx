@@ -2,7 +2,7 @@ import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { MediaCard } from "@/components/MediaCard";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/Reveal";
-import { products } from "@/lib/content";
+import { catalogs, products } from "@/lib/content";
 
 export const metadata = {
   title: "Products",
@@ -40,6 +40,25 @@ const applications = [
   "Public Infrastructure",
 ];
 
+function PdfIcon({ size = 14 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <path d="M14 2v6h6" />
+      <path d="M9 13h6M9 17h4" />
+    </svg>
+  );
+}
+
+function ViewIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
+
 export default function ProductsPage() {
   return (
     <>
@@ -68,19 +87,6 @@ export default function ProductsPage() {
               Designed for commercial and industrial electrical distribution
               applications with rigorous short-circuit protection ratings.
             </p>
-            <div className="mt-7 md:mt-8 flex flex-wrap gap-4 items-center">
-              <a
-                href="/files/Product-Catalogue-Sandwich-Type-Busbar.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-primary"
-              >
-                <DownloadIcon /> Product Catalogue
-              </a>
-              <span className="text-xs text-slate-500 uppercase tracking-wider">
-                PDF · 4.3 MB
-              </span>
-            </div>
           </Reveal>
           <Reveal direction="right" delay={0.15}>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-white group">
@@ -111,6 +117,96 @@ export default function ProductsPage() {
               </div>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container-x">
+          <Reveal className="max-w-3xl mb-10 md:mb-14">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900">
+              Product Catalogues
+            </h2>
+            <p className="mt-5 text-slate-600 leading-relaxed">
+              Browse the full Megaduct range — from sandwich-type trunking to
+              mission-critical data centre and cast-resin systems.
+            </p>
+          </Reveal>
+          <StaggerGroup className="flex flex-col gap-6 md:gap-8">
+            {catalogs.map((c, i) => {
+              const flip = i % 2 === 1;
+              return (
+                <StaggerItem
+                  key={c.name}
+                  direction={flip ? "right" : "left"}
+                  distance={24}
+                  className={`group relative bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-2xl hover:border-navy-900/30 hover:-translate-y-1 transition-[box-shadow,border-color,transform] duration-500 overflow-hidden flex flex-col ${flip ? "md:flex-row-reverse" : "md:flex-row"}`}
+                >
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-navy-900/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                  />
+                  <a
+                    href={c.file}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="relative block md:w-[42%] lg:w-[38%] shrink-0 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100"
+                    aria-label={`View ${c.name} catalogue`}
+                  >
+                    <span
+                      aria-hidden
+                      className="absolute inset-0 dot-pattern opacity-50"
+                    />
+                    <div className="relative h-64 md:h-full md:min-h-[320px] flex items-center justify-center px-6 py-8 md:p-10">
+                      <Image
+                        src={c.cover}
+                        alt={`${c.name} cover`}
+                        width={360}
+                        height={468}
+                        sizes="(max-width: 768px) 80vw, 340px"
+                        className={`relative z-10 h-full max-h-[260px] md:max-h-[300px] w-auto object-contain rounded-md ring-1 ring-slate-200/70 shadow-[0_24px_50px_-18px_rgba(33,63,126,0.45)] transition-transform duration-700 ease-out will-change-transform group-hover:scale-[1.04] ${flip ? "group-hover:-rotate-2" : "group-hover:rotate-2"}`}
+                      />
+                    </div>
+                    <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-navy-900 font-semibold ring-1 ring-slate-200 shadow-sm">
+                      <PdfIcon /> PDF
+                    </span>
+                  </a>
+
+                  <div className="relative flex flex-col flex-1 min-w-0 p-6 sm:p-8 md:p-10 lg:p-12 justify-center">
+                    <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-navy-900/70 font-semibold">
+                      {c.tagline}
+                    </p>
+                    <h3 className="mt-2 text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 leading-tight">
+                      {c.name}
+                    </h3>
+                    <span
+                      aria-hidden
+                      className={`mt-4 block h-[3px] w-12 rounded-full bg-navy-900 transition-all duration-500 ease-out group-hover:w-24`}
+                    />
+                    <p className="mt-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+                      {c.overview}
+                    </p>
+                    <div className="mt-7 flex items-center gap-4 flex-wrap">
+                      <a
+                        href={c.file}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="relative inline-flex items-center gap-2 overflow-hidden rounded-lg bg-navy-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-navy-800 hover:shadow-lg hover:gap-3"
+                      >
+                        <ViewIcon />
+                        <span>View Catalogue</span>
+                        <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-0.5">
+                          →
+                        </span>
+                      </a>
+                      <span className="text-xs uppercase tracking-[0.18em] text-slate-400 font-semibold">
+                        Opens in new tab
+                      </span>
+                    </div>
+                  </div>
+                </StaggerItem>
+              );
+            })}
+          </StaggerGroup>
         </div>
       </section>
 
@@ -200,72 +296,36 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
-        <StaggerGroup className="container-x grid md:grid-cols-2 gap-5 md:gap-8">
-          <StaggerItem direction="left">
+      <section className="py-12 md:py-16">
+        <div className="container-x flex justify-center">
+          <Reveal>
             <a
               href="/files/Sanaya-Company-Profile.pdf"
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center gap-5 sm:gap-6 bg-navy-900 text-white rounded-2xl p-6 sm:p-8 hover:bg-navy-800 hover:-translate-y-1 transition-all"
+              className="group inline-flex items-center gap-4 bg-navy-900 text-white rounded-xl px-5 py-4 hover:bg-navy-800 hover:-translate-y-0.5 transition-all shadow-sm hover:shadow-lg"
             >
               <Image
                 src="/images/sanayate-pdf.png"
                 alt=""
-                width={64}
-                height={64}
+                width={44}
+                height={44}
                 className="rounded-md shrink-0"
               />
               <div className="min-w-0">
-                <p className="text-slate-200 text-xs uppercase tracking-wider">
+                <p className="text-slate-300 text-[10px] uppercase tracking-[0.18em] font-semibold">
                   PDF — Download
                 </p>
-                <p className="text-lg sm:text-xl font-semibold mt-1">Company Profile</p>
-                <p className="text-sm text-slate-300 mt-1">
-                  Capabilities, certifications and references.
-                </p>
+                <p className="text-base font-semibold mt-0.5">Company Profile</p>
               </div>
+              <span aria-hidden className="ml-2 transition-transform duration-300 group-hover:translate-x-0.5">
+                →
+              </span>
             </a>
-          </StaggerItem>
-          <StaggerItem direction="right">
-            <a
-              href="/files/Product-Catalogue-Sandwich-Type-Busbar.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="group flex items-center gap-5 sm:gap-6 bg-white text-navy-900 rounded-2xl p-6 sm:p-8 border border-slate-200 hover:border-navy-900 hover:shadow-xl hover:-translate-y-1 transition-all"
-            >
-              <Image
-                src="/images/brochure3.png"
-                alt=""
-                width={64}
-                height={64}
-                className="rounded-md shrink-0"
-              />
-              <div className="min-w-0">
-                <p className="text-slate-500 text-xs uppercase tracking-wider font-semibold">
-                  PDF — Download
-                </p>
-                <p className="text-lg sm:text-xl font-semibold mt-1">
-                  Sandwich-Type Busbar Catalogue
-                </p>
-                <p className="text-sm text-slate-600 mt-1">
-                  Full Linkk product specifications.
-                </p>
-              </div>
-            </a>
-          </StaggerItem>
-        </StaggerGroup>
+          </Reveal>
+        </div>
       </section>
     </>
   );
 }
 
-function DownloadIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-      <path d="M7 10l5 5 5-5" />
-      <path d="M12 15V3" />
-    </svg>
-  );
-}

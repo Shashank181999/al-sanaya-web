@@ -5,6 +5,9 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SocialSidebar } from "@/components/SocialSidebar";
 import { ChatWidget } from "@/components/ChatWidget";
+import { CookieConsent } from "@/components/CookieConsent";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -95,11 +98,14 @@ export default function RootLayout({
       className={`${inter.variable} ${display.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-slate-800">
+        <ScrollProgressBar />
         <Header />
         <SocialSidebar />
         <main className="flex-1">{children}</main>
         <Footer />
         <ChatWidget />
+        <ScrollToTop />
+        <CookieConsent />
       </body>
     </html>
   );

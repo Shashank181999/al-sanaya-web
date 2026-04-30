@@ -6,7 +6,9 @@ import { RevealText } from "@/components/RevealText";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { BrandMarquee } from "@/components/BrandMarquee";
 import { Hero3D } from "@/components/Hero3D";
-import { company, products, projects } from "@/lib/content";
+import { ScrollHint } from "@/components/ScrollHint";
+import { CatalogCarousel } from "@/components/CatalogCarousel";
+import { catalogs, company, products, projects } from "@/lib/content";
 
 const services = [
   {
@@ -53,7 +55,7 @@ const services = [
 ];
 
 const differentiators = [
-  { value: 16, suffix: "+", label: "Years of Service" },
+  { value: 20, suffix: "+", label: "Years of Service" },
   { value: 5, suffix: "", label: "Regional Branches" },
   { value: 50, suffix: "+", label: "Skilled Personnel" },
   { value: 14, suffix: "+", label: "Landmark Projects" },
@@ -125,12 +127,9 @@ export default function HomePage() {
                 Linkk · Megaduct Authorized Partner
               </span>
             </div>
-            <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em]">
-              <span>Scroll</span>
-              <span className="block h-8 w-px bg-white/30" />
-            </div>
           </div>
         </FadeIn>
+        <ScrollHint />
       </section>
 
       <BrandMarquee />
@@ -160,10 +159,7 @@ export default function HomePage() {
                     <div className="h-12 w-12 rounded-xl bg-navy-900 text-white flex items-center justify-center group-hover:scale-110 transition-transform">
                       <span className="h-6 w-6 block">{s.icon}</span>
                     </div>
-                    <p className="text-[10px] text-slate-400 font-mono mt-5">
-                      {String(i + 1).padStart(2, "0")} / 04
-                    </p>
-                    <h3 className="text-xl font-bold text-navy-900 mt-2">
+                    <h3 className="text-xl font-bold text-navy-900 mt-5">
                       {s.title}
                     </h3>
                     <p className="mt-3 text-slate-600 leading-relaxed text-sm">
@@ -242,7 +238,7 @@ export default function HomePage() {
               as="h2"
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900 block"
             >
-              Powering the GCC for over 16 years.
+              Powering the GCC for over 20 years.
             </RevealText>
             <p className="mt-5 md:mt-6 text-slate-600 leading-relaxed">
               Al Sanaya Technical Equipment LLC has grown into a trusted
@@ -277,12 +273,44 @@ export default function HomePage() {
 
       <section className="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
         <div className="absolute inset-0 dot-pattern opacity-60" />
+        <div
+          aria-hidden
+          className="absolute -top-32 -right-24 h-96 w-96 rounded-full bg-navy-900/5 blur-3xl"
+        />
         <div className="container-x relative">
           <Reveal direction="up">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 md:gap-6 mb-10 md:mb-12">
               <div>
+                <RevealText
+                  as="h2"
+                  className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900 max-w-xl block"
+                >
+                  Product Catalogues
+                </RevealText>
+                <p className="mt-4 text-slate-600 leading-relaxed max-w-xl">
+                  Browse the full Megaduct range — from sandwich-type trunking to
+                  mission-critical data centre and cast-resin systems.
+                </p>
+              </div>
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-2 text-navy-900 font-semibold hover:opacity-80"
+              >
+                View all catalogues <ArrowRight />
+              </Link>
+            </div>
+          </Reveal>
+          <CatalogCarousel items={catalogs} />
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24">
+        <div className="container-x">
+          <Reveal direction="up">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 md:gap-6 mb-10 md:mb-12">
+              <div>
                 <p className="text-navy-900 text-sm font-semibold uppercase tracking-[0.2em] mb-3">
-                  Our Catalogue
+                  Components
                 </p>
                 <RevealText
                   as="h2"

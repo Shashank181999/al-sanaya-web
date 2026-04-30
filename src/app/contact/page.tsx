@@ -5,8 +5,10 @@ import { offices } from "@/lib/content";
 export const metadata = {
   title: "Contact",
   description:
-    "Get in touch with Al Sanaya Technical Equipment — offices in Abu Dhabi, Dubai, Lebanon and Jordan.",
+    "Get in touch with Al Sanaya Technical Equipment — head office in Dubai, United Arab Emirates.",
 };
+
+const dubaiOffice = offices.find((o) => o.name.startsWith("Dubai")) ?? offices[0];
 
 const quickInfo = [
   {
@@ -21,8 +23,8 @@ const quickInfo = [
   },
   {
     title: "Coverage",
-    value: "GCC Wide",
-    body: "UAE, Lebanon, Jordan and across the Gulf.",
+    value: "GCC & MENA",
+    body: "Serving clients across the Gulf and wider Middle East & North Africa.",
   },
 ];
 
@@ -58,66 +60,79 @@ export default function ContactPage() {
       <section className="py-16 md:py-24">
         <div className="container-x">
           <Reveal className="max-w-3xl mb-10 md:mb-14">
-            <p className="text-navy-900 text-sm font-semibold uppercase tracking-[0.2em] mb-3">
-              Our Offices
-            </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900">
-              Four locations, one team.
+              Our Office
             </h2>
           </Reveal>
-          <StaggerGroup className="grid md:grid-cols-2 gap-4 sm:gap-6">
-            {offices.map((o, i) => (
-              <StaggerItem
-                key={o.name}
-                direction={i % 2 === 0 ? "left" : "right"}
-                className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:border-navy-900 transition-[box-shadow,border-color] duration-300"
-              >
-                <div className="flex items-start justify-between gap-3 sm:gap-4 mb-5 flex-wrap">
-                  <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-lg bg-navy-900 text-white flex items-center justify-center">
-                      <PinIcon />
-                    </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-navy-900">
-                      {o.name}
-                    </h3>
+          <StaggerGroup className="grid md:grid-cols-2 gap-4 sm:gap-6 items-stretch">
+            <StaggerItem
+              direction="left"
+              className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:border-navy-900 transition-[box-shadow,border-color] duration-300"
+            >
+              <div className="flex items-start justify-between gap-3 sm:gap-4 mb-5 flex-wrap">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-lg bg-navy-900 text-white flex items-center justify-center">
+                    <PinIcon />
                   </div>
-                  <span className="text-[10px] sm:text-xs px-3 py-1 rounded-full bg-slate-100 text-navy-900 font-semibold uppercase tracking-wider">
-                    {o.country.split(",")[0]}
-                  </span>
+                  <h3 className="text-lg sm:text-xl font-bold text-navy-900">
+                    {dubaiOffice.name}
+                  </h3>
                 </div>
-                <dl className="space-y-3 text-sm">
-                  {o.landmark && <Row label="Landmark" value={o.landmark} />}
-                  {o.poBox && <Row label="P.O. Box" value={o.poBox} />}
-                  <Row label="Country" value={o.country} />
-                  {o.tel && (
-                    <Row
-                      label="Phone"
-                      value={
-                        <a
-                          href={`tel:${o.tel.replace(/\s/g, "")}`}
-                          className="text-navy-900 hover:opacity-80 font-medium"
-                        >
-                          {o.tel}
-                        </a>
-                      }
-                    />
-                  )}
-                  {o.email && (
-                    <Row
-                      label="Email"
-                      value={
-                        <a
-                          href={`mailto:${o.email}`}
-                          className="text-navy-900 hover:opacity-80 font-medium"
-                        >
-                          {o.email}
-                        </a>
-                      }
-                    />
-                  )}
-                </dl>
-              </StaggerItem>
-            ))}
+                <span className="text-[10px] sm:text-xs px-3 py-1 rounded-full bg-slate-100 text-navy-900 font-semibold uppercase tracking-wider">
+                  {dubaiOffice.country.split(",")[0]}
+                </span>
+              </div>
+              <dl className="space-y-3 text-sm">
+                {dubaiOffice.landmark && (
+                  <Row label="Landmark" value={dubaiOffice.landmark} />
+                )}
+                {dubaiOffice.poBox && (
+                  <Row label="P.O. Box" value={dubaiOffice.poBox} />
+                )}
+                <Row label="Country" value={dubaiOffice.country} />
+                {dubaiOffice.tel && (
+                  <Row
+                    label="Phone"
+                    value={
+                      <a
+                        href={`tel:${dubaiOffice.tel.replace(/\s/g, "")}`}
+                        className="text-navy-900 hover:opacity-80 font-medium"
+                      >
+                        {dubaiOffice.tel}
+                      </a>
+                    }
+                  />
+                )}
+                {dubaiOffice.email && (
+                  <Row
+                    label="Email"
+                    value={
+                      <a
+                        href={`mailto:${dubaiOffice.email}`}
+                        className="text-navy-900 hover:opacity-80 font-medium"
+                      >
+                        {dubaiOffice.email}
+                      </a>
+                    }
+                  />
+                )}
+              </dl>
+            </StaggerItem>
+            <StaggerItem
+              direction="right"
+              className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm min-h-[320px]"
+            >
+              <iframe
+                title="Al Sanaya Dubai Office Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.567192268242!2d55.33939097561469!3d25.251498629498744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5de835886f1b%3A0xb14014bb235fbbbe!2sAl%20Garhoud%20Medical%20Fitness%20Center!5e0!3m2!1sen!2sae!4v1777547958022!5m2!1sen!2sae"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+                className="h-full w-full min-h-[320px] border-0"
+              />
+            </StaggerItem>
           </StaggerGroup>
         </div>
       </section>

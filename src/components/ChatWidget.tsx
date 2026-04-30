@@ -67,7 +67,7 @@ function answer(input: string): { content: string; cta?: Message["cta"] } {
   if (/(year|since|history|established|how long|experience)/.test(q)) {
     return {
       content:
-        "Al Sanaya Technical Equipment LLC was established in 2004 — over 16 years of supply, testing and commissioning experience across the GCC.",
+        "Al Sanaya Technical Equipment LLC was established in 2004 — over 20 years of supply, testing and commissioning experience across the GCC.",
       cta: { label: "Our story", href: "/about" },
     };
   }
