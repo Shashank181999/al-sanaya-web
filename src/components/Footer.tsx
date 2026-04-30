@@ -95,7 +95,7 @@ export function Footer() {
               Privacy Policy
             </Link>
             <span className="hidden md:inline text-slate-600">·</span>
-            <span>Engineered for performance. Built for the MENA region.</span>
+            <span>Engineered for performance. Built for the GCC and MENA region.</span>
           </nav>
         </div>
       </div>

@@ -13,7 +13,7 @@ import { catalogs, company, products, projects } from "@/lib/content";
 const services = [
   {
     title: "Supply & Trading",
-    body: "Authorized supply of Linkk and Megaduct busduct trunking systems with full UAE and MENA inventory backing.",
+    body: "Authorized supply of Linkk and Megaduct busduct trunking systems with full GCC and MENA inventory backing.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 7l9-4 9 4-9 4-9-4z" />
@@ -44,7 +44,7 @@ const services = [
   },
   {
     title: "Installation & Contracting",
-    body: "Turn-key contracting from delivery through installation and final handover, across the MENA region.",
+    body: "Turn-key contracting from delivery through installation and final handover, across the GCC and MENA region.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 9l9-6 9 6v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
@@ -144,7 +144,7 @@ export default function HomePage() {
               as="h2"
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900 block"
             >
-              Four pillars of service across the MENA region.
+              Four pillars of service across the GCC and MENA region.
             </RevealText>
             <p className="mt-5 text-slate-600 leading-relaxed text-base md:text-lg">
               From product specification to final commissioning — we deliver every stage of an electrical project under one roof.
@@ -238,12 +238,12 @@ export default function HomePage() {
               as="h2"
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900 block"
             >
-              Powering the MENA region for over 20 years.
+              Powering the GCC and MENA region for over 20 years.
             </RevealText>
             <p className="mt-5 md:mt-6 text-slate-600 leading-relaxed">
               Al Sanaya Technical Equipment LLC has grown into a trusted
               supplier and contractor for the oil &amp; gas, utilities and
-              construction sectors. Headquartered in Dubai and serving the UAE
+              construction sectors. Headquartered in Dubai and serving the GCC
               and the wider MENA region, we deliver high-quality busduct,
               electrical and mechanical equipment built to perform.
             </p>

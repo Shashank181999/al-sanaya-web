@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s — Al Sanaya",
   },
   description:
-    "Trading and contracting partner for the supply, testing & commissioning of electrical and mechanical equipment to oil & gas, utilities and construction across the UAE and the wider MENA region.",
+    "Trading and contracting partner for the supply, testing & commissioning of electrical and mechanical equipment to oil & gas, utilities and construction across the GCC and the wider MENA region.",
   keywords: [
     "Al Sanaya",
     "Technical Equipment",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     "Megaduct",
     "busduct UAE",
     "Dubai electrical supplier",
-    "MENA electrical contracting",
+    "GCC and MENA electrical contracting",
     "oil and gas equipment",
   ],
   authors: [{ name: "Al Sanaya Technical Equipment L.L.C" }],
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "Al Sanaya Technical Equipment L.L.C",
     title: "Al Sanaya Technical Equipment L.L.C",
     description:
-      "Supply, testing & commissioning of electrical and mechanical equipment across the UAE and the wider MENA region. Authorized partner for Linkk and Megaduct busduct systems.",
+      "Supply, testing & commissioning of electrical and mechanical equipment across the GCC and the wider MENA region. Authorized partner for Linkk and Megaduct busduct systems.",
     images: [
       {
         url: "/logo.png",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Al Sanaya Technical Equipment L.L.C",
     description:
-      "Supply, testing & commissioning of electrical and mechanical equipment across the UAE and the wider MENA region.",
+      "Supply, testing & commissioning of electrical and mechanical equipment across the GCC and the wider MENA region.",
     images: ["/logo.png"],
   },
   robots: {

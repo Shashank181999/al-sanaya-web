@@ -6,7 +6,7 @@ import { projects } from "@/lib/content";
 export const metadata = {
   title: "Projects",
   description:
-    "Linkk and Megaduct busduct trunking systems delivered across the UAE and the wider MENA region — a selection of our prestigious project references.",
+    "Linkk and Megaduct busduct trunking systems delivered across the GCC and the wider MENA region — a selection of our prestigious project references.",
 };
 
 export default function ProjectsPage() {
@@ -14,8 +14,8 @@ export default function ProjectsPage() {
     <>
       <PageHero
         eyebrow="Projects"
-        title="Powering landmark developments across the MENA region."
-        description="Linkk and Megaduct busduct trunking systems have successfully been delivered to many projects across the UAE and the wider MENA region."
+        title="Powering landmark developments across the GCC and MENA region."
+        description="Linkk and Megaduct busduct trunking systems have successfully been delivered to many projects across the GCC and the wider MENA region."
       />
 
       <section className="py-16 md:py-24">
@@ -46,7 +46,7 @@ export default function ProjectsPage() {
       <section className="py-16 md:py-24 bg-navy-900 text-white">
         <Reveal className="container-x grid grid-cols-3 gap-6 md:gap-8 text-center">
           <Stat value={`${projects.length}+`} label="Landmark Projects" />
-          <Stat value="MENA" label="Regional Footprint" />
+          <Stat value="GCC & MENA" label="Regional Footprint" />
           <Stat value="20+" label="Years of Service" />
         </Reveal>
       </section>

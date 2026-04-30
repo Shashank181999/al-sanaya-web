@@ -3,7 +3,7 @@ export const company = {
   shortName: "Al Sanaya",
   tagline: "Engineering Power. Delivering Trust.",
   blurb:
-    "Trading and contracting partner for the supply, testing & commissioning of electrical and mechanical equipment to oil & gas, utilities and construction across the UAE and the wider MENA region.",
+    "Trading and contracting partner for the supply, testing & commissioning of electrical and mechanical equipment to oil & gas, utilities and construction across the GCC and the wider MENA region.",
   yearsExperience: 20,
   branches: 1,
   personnel: 50,

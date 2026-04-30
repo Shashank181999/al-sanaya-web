@@ -23,8 +23,8 @@ const quickInfo = [
   },
   {
     title: "Coverage",
-    value: "UAE & MENA",
-    body: "Serving clients across the UAE and the wider Middle East & North Africa region.",
+    value: "GCC & MENA",
+    body: "Serving clients across the GCC and the wider Middle East & North Africa region.",
   },
 ];
 
