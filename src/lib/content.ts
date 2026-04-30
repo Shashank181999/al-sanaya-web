@@ -42,6 +42,7 @@ export const offices: Office[] = [
     name: "Lebanon",
     poBox: "14-5426",
     country: "Beirut, Lebanon",
+    tel: "+961-1 366286",
   },
   {
     name: "Jordan",
