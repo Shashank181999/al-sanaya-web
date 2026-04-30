@@ -32,7 +32,7 @@ function answer(input: string): { content: string; cta?: Message["cta"] } {
   if (/(office|location|address|where|abu dhabi|dubai|lebanon|jordan|gcc)/.test(q)) {
     return {
       content:
-        "We have four offices: Abu Dhabi (HQ — Baynunah Tower), Dubai (Umm Ramool), Beirut (Lebanon), and Amman (Jordan). Our team responds within one business day.",
+        "Our office is in Dubai (Al Garhoud Medical Fitness Center, P.O. Box 46686, UAE). We serve the UAE and the wider MENA region — our team responds within one business day.",
       cta: { label: "See all offices", href: "/contact" },
     };
   }
@@ -53,7 +53,7 @@ function answer(input: string): { content: string; cta?: Message["cta"] } {
   if (/(project|reference|landmark|tower|hotel)/.test(q)) {
     return {
       content:
-        "Linkk and Megaduct have been delivered to landmark GCC projects — including Marina 101 (Dubai), Moda Mall (Bahrain), W Hotel Amman, Park Inn KSA, Fujairah Tower and many more.",
+        "Linkk and Megaduct have been delivered to landmark projects across the UAE and the wider MENA region — including Marina 101, Atria, Bay Central Tower, Al Bateen Tower, Fujairah Tower and many more.",
       cta: { label: "See all projects", href: "/projects" },
     };
   }
@@ -67,7 +67,7 @@ function answer(input: string): { content: string; cta?: Message["cta"] } {
   if (/(year|since|history|established|how long|experience)/.test(q)) {
     return {
       content:
-        "Al Sanaya Technical Equipment LLC was established in 2004 — over 20 years of supply, testing and commissioning experience across the GCC.",
+        "Al Sanaya Technical Equipment LLC was established in 2004 — over 20 years of supply, testing and commissioning experience across the UAE and the wider MENA region.",
       cta: { label: "Our story", href: "/about" },
     };
   }

@@ -5,7 +5,7 @@ const items = [
   "MEGADUCT",
   "ISO 9001:2008",
   "DAS CERTIFIED",
-  "GCC AUTHORIZED",
+  "MENA AUTHORIZED",
   "OIL & GAS",
   "UTILITIES",
   "CONSTRUCTION",

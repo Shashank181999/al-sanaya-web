@@ -52,14 +52,14 @@ export function Footer() {
 
         <div>
           <h4 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">
-            Head Office
+            Dubai Office
           </h4>
           <p className="text-sm text-slate-400 leading-relaxed">
             Al Garhoud Medical Fitness Center
             <br />
             P.O. Box 46686
             <br />
-            United Arab Emirates
+            Dubai, United Arab Emirates
           </p>
           <p className="text-sm mt-3">
             <a
@@ -95,7 +95,7 @@ export function Footer() {
               Privacy Policy
             </Link>
             <span className="hidden md:inline text-slate-600">·</span>
-            <span>Engineered for performance. Built for the GCC.</span>
+            <span>Engineered for performance. Built for the MENA region.</span>
           </nav>
         </div>
       </div>

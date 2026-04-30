@@ -107,7 +107,7 @@ export default function ProductsPage() {
                   </div>
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.18em] text-slate-300">Authorized</p>
-                    <p className="font-bold text-white text-sm leading-tight">GCC Distribution Partner</p>
+                    <p className="font-bold text-white text-sm leading-tight">MENA Distribution Partner</p>
                   </div>
                 </div>
                 <div className="hidden lg:flex items-center gap-2 text-[10px] text-slate-300 uppercase tracking-[0.18em]">

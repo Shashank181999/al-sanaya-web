@@ -35,7 +35,7 @@ const sections = [
   },
   {
     title: "7. Governing Law",
-    body: `These Terms & Conditions are governed by the laws of the United Arab Emirates. Any dispute arising in connection with this website shall be subject to the exclusive jurisdiction of the courts of Abu Dhabi.`,
+    body: `These Terms & Conditions are governed by the laws of the United Arab Emirates. Any dispute arising in connection with this website shall be subject to the exclusive jurisdiction of the courts of Dubai.`,
   },
   {
     title: "8. Changes to These Terms",

@@ -17,7 +17,7 @@ const values = [
   },
   {
     title: "Vision",
-    body: "To be the leading supplier of industrial equipment, electrical components and busduct systems in the GCC and beyond.",
+    body: "To be the leading supplier of industrial equipment, electrical components and busduct systems in the UAE, MENA region and beyond.",
   },
   {
     title: "Quality",
@@ -39,7 +39,7 @@ const process = [
   {
     n: "03",
     title: "Installation Support",
-    body: "Our technical team supports installation across all four GCC offices, with full coordination on-site.",
+    body: "Our technical team supports installations across the MENA region from our Dubai office, with full coordination on-site.",
   },
   {
     n: "04",
@@ -54,7 +54,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="Implementing quality, engineering trust."
-        description="Al Sanaya Technical Equipment LLC has been a trusted supplier and contractor for the oil & gas, utilities and construction sectors across the GCC for over 20 years."
+        description="Al Sanaya Technical Equipment LLC has been a trusted supplier and contractor for the oil & gas, utilities and construction sectors across the UAE and the wider MENA region for over 20 years."
       />
 
       <section className="py-16 md:py-24">
@@ -69,9 +69,9 @@ export default function AboutPage() {
             <p className="mt-5 md:mt-6 text-slate-600 leading-relaxed">
               Al Sanaya implements a Quality Management System for the
               procurement of equipment and spares for the oil, gas and general
-              industry. Across our offices in Abu Dhabi, Dubai, Lebanon and
-              Jordan we deliver supply, testing and commissioning services for
-              electrical and mechanical projects on-shore and off-shore.
+              industry. From our Dubai office we deliver supply, testing and
+              commissioning services for electrical and mechanical projects
+              across the UAE and the wider MENA region — on-shore and off-shore.
             </p>
             <p className="mt-4 text-slate-600 leading-relaxed">
               We&apos;ve grown steadily into a workforce of more than 50
@@ -84,8 +84,8 @@ export default function AboutPage() {
                 <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Years</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-navy-900">5</p>
-                <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Branches</p>
+                <p className="text-3xl font-bold text-navy-900">MENA</p>
+                <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Coverage</p>
               </div>
               <div>
                 <p className="text-3xl font-bold text-navy-900">50+</p>

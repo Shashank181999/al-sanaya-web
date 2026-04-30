@@ -3,9 +3,9 @@ export const company = {
   shortName: "Al Sanaya",
   tagline: "Engineering Power. Delivering Trust.",
   blurb:
-    "Trading and contracting partner for the supply, testing & commissioning of electrical and mechanical equipment to oil & gas, utilities and construction across the GCC.",
+    "Trading and contracting partner for the supply, testing & commissioning of electrical and mechanical equipment to oil & gas, utilities and construction across the UAE and the wider MENA region.",
   yearsExperience: 20,
-  branches: 5,
+  branches: 1,
   personnel: 50,
   brands: ["Linkk", "Megaduct"],
   email: "info@sanayate.com",
@@ -30,27 +30,6 @@ export const offices: Office[] = [
     landmark: "Al Garhoud Medical Fitness Center",
     tel: "+971 4 835 2303",
     email: "info@sanayate.com",
-  },
-  {
-    name: "Abu Dhabi Branch",
-    poBox: "46686",
-    country: "United Arab Emirates",
-    landmark: "Baynunah Tower, Office #77",
-    email: "info@sanayate.com",
-  },
-  {
-    name: "Lebanon",
-    poBox: "14-5426",
-    country: "Beirut, Lebanon",
-    tel: "+961-1 366286",
-  },
-  {
-    name: "Jordan",
-    country: "Amman, Jordan",
-    landmark:
-      "110, 1st Floor, Adil Al Qasim Center, Jabel Al Husein",
-    tel: "+962 (06) 563 9233",
-    email: "gm@sanayate.com",
   },
 ];
 
@@ -127,8 +106,8 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  { name: "Marina 101", location: "Dubai, UAE", image: "/images/projects/marina-101.webp" },
-  { name: "W Hotel", location: "Amman, Jordan", image: "/images/projects/w-hotel-amman.jpg" },
+  { name: "Marina 101", location: "UAE", image: "/images/projects/marina-101.webp" },
+  { name: "W Hotel", location: "MENA Region", image: "/images/projects/w-hotel-amman.jpg" },
   { name: "Atria", location: "UAE", image: "/images/projects/atria.webp" },
   { name: "Bay Central Tower", location: "UAE", image: "/images/projects/bay-central-tower.webp" },
   { name: "Levanto", location: "UAE", image: "/images/projects/levanto.jpg" },
@@ -138,10 +117,10 @@ export const projects: Project[] = [
   { name: "Al Ain Ahlia", location: "UAE", image: "/images/projects/al-ain-ahlia.webp" },
   { name: "Fujairah Tower", location: "UAE", image: "/images/projects/fujairah-tower.webp" },
   { name: "Escan Tower", location: "UAE", image: "/images/projects/escan-tower.webp" },
-  { name: "Al Thuraya", location: "Qatar", image: "/images/projects/al-thuraya.jpg" },
-  { name: "Al Brooq", location: "Qatar", image: "/images/projects/al-brooq.webp" },
-  { name: "Moda Mall", location: "Bahrain", image: "/images/projects/moda-mall.jpg" },
-  { name: "Rotana Yasmeen", location: "Syria", image: "/images/projects/rotana-yasmeen.jpg" },
+  { name: "Al Thuraya", location: "MENA Region", image: "/images/projects/al-thuraya.jpg" },
+  { name: "Al Brooq", location: "MENA Region", image: "/images/projects/al-brooq.webp" },
+  { name: "Moda Mall", location: "MENA Region", image: "/images/projects/moda-mall.jpg" },
+  { name: "Rotana Yasmeen", location: "MENA Region", image: "/images/projects/rotana-yasmeen.jpg" },
 ];
 
 export const nav = [
