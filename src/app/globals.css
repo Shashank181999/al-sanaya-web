@@ -81,28 +81,30 @@ h1, h2, h3, h4 {
   .container-x { padding-left: 2rem; padding-right: 2rem; }
 }
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--color-brand-dark);
-  color: #ffffff;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  transition: background 0.15s ease;
-}
-.btn-primary:hover { background: var(--color-brand-darker); color: #fff; }
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-brand-dark);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background 0.15s ease;
+  }
+  .btn-primary:hover { background: var(--color-brand-darker); color: #fff; }
 
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  border: 1px solid rgba(255,255,255,0.4);
-  color: #fff;
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  transition: background 0.15s ease;
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background 0.15s ease;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); }
 }
-.btn-outline:hover { background: rgba(255,255,255,0.1); }
