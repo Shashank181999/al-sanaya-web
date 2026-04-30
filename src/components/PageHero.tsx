@@ -27,7 +27,7 @@ export function PageHero({ eyebrow, title, description }: PageHeroProps) {
         className="absolute inset-y-0 right-0 hidden md:block md:w-[55%] lg:w-[50%] pointer-events-none"
         style={{
           background:
-            "linear-gradient(to right, rgb(5,13,34) 0%, rgba(5,13,34,0.7) 30%, rgba(5,13,34,0) 60%, rgba(5,13,34,0) 100%)",
+            "linear-gradient(to right, rgb(33,63,126) 0%, rgba(33,63,126,0.7) 30%, rgba(33,63,126,0) 60%, rgba(33,63,126,0) 100%)",
         }}
       />
 

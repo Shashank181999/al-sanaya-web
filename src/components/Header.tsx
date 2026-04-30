@@ -31,24 +31,16 @@ export function Header() {
       }`}
     >
       <div className="container-x flex items-center justify-between h-20 md:h-24">
-        <Link href="/" className="flex items-center gap-3 shrink-0">
+        <Link href="/" className="flex items-center shrink-0">
           <Image
             src="/logo.png"
-            alt="Al Sanaya Technical Equipment"
-            width={618}
-            height={800}
+            alt="Al Sanaya Technical Equipment L.L.C"
+            width={2325}
+            height={426}
             priority
-            sizes="80px"
-            className="h-12 md:h-16 w-auto object-contain"
+            sizes="(max-width: 768px) 220px, 320px"
+            className="h-10 md:h-14 w-auto object-contain"
           />
-          <div className="hidden sm:block leading-tight">
-            <p className="text-navy-900 font-bold tracking-wide text-sm md:text-[15px]">
-              AL SANAYA
-            </p>
-            <p className="text-slate-500 text-[9px] md:text-[10px] tracking-[0.18em] uppercase">
-              Technical Equipment L.L.C
-            </p>
-          </div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

@@ -60,8 +60,10 @@ const differentiators = [
 ];
 
 export default function HomePage() {
-  const featuredProjects = projects.slice(0, 6);
   const featuredProducts = products.slice(0, 6);
+  const homeProjects = projects
+    .slice(0, projects.findIndex((p) => p.name === "Al Thuraya") + 1)
+    .filter((p) => p.name !== "Escan Tower");
 
   return (
     <>
@@ -335,23 +337,34 @@ export default function HomePage() {
               </Link>
             </div>
           </Reveal>
-          <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-            {featuredProjects.map((p, i) => {
-              const dirs = ["left", "up", "right", "left", "up", "right"] as const;
-              const styles = ["overlay", "below", "minimal", "below", "overlay", "minimal"] as const;
+          <StaggerGroup
+            className="grid grid-cols-2 md:grid-cols-4 auto-rows-[150px] sm:auto-rows-[190px] md:auto-rows-[230px] grid-flow-dense gap-3 md:gap-4"
+            staggerChildren={0.04}
+          >
+            {homeProjects.map((p, i) => {
+              const span =
+                i === 0
+                  ? "col-span-2 row-span-2"
+                  : i === 4
+                    ? "row-span-2"
+                    : i === 7
+                      ? "col-span-2"
+                      : "";
               return (
-                <StaggerItem key={p.name} direction={dirs[i]}>
-                  <div className="aspect-[4/5]">
-                    <MediaCard
-                      image={p.image}
-                      title={p.name}
-                      subtitle={p.location}
-                      variant="project"
-                      projectStyle={styles[i]}
-                      fillHeight
-                      imageSizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
+                <StaggerItem
+                  key={p.name}
+                  direction="up"
+                  className={`h-full ${span}`}
+                >
+                  <MediaCard
+                    image={p.image}
+                    title={p.name}
+                    subtitle={p.location}
+                    variant="project"
+                    projectStyle="overlay"
+                    fillHeight
+                    imageSizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  />
                 </StaggerItem>
               );
             })}
@@ -373,8 +386,8 @@ export default function HomePage() {
             Ready to power your next project?
           </RevealText>
           <p className="mt-5 text-slate-300 text-base md:text-lg">
-            From specification to commissioning — our team across UAE, Lebanon
-            and Jordan is ready to engineer the right solution for you.
+            From specification to commissioning — our team across the Middle
+            East is ready to engineer the right solution for you.
           </p>
           <div className="mt-8 md:mt-10 flex flex-wrap justify-center gap-3 sm:gap-4">
             <Link href="/contact" className="btn-primary">

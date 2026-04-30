@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-50: #f1f5f9;
-  --color-navy-100: #e2e8f0;
-  --color-navy-200: #cbd5e1;
-  --color-navy-500: #15294a;
-  --color-navy-700: #081a35;
-  --color-navy-800: #07112a;
-  --color-navy-900: #050d22;
-  --color-brand-dark: #050d22;
-  --color-brand-darker: #02071a;
+  --color-navy-50: #eef1f8;
+  --color-navy-100: #dde3ee;
+  --color-navy-200: #bcc7dd;
+  --color-navy-500: #3b58a0;
+  --color-navy-700: #2a4a8e;
+  --color-navy-800: #243d7d;
+  --color-navy-900: #213f7e;
+  --color-brand-dark: #213f7e;
+  --color-brand-darker: #1a3263;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
   --background: #ffffff;
-  --foreground: #07112a;
+  --foreground: #213f7e;
 }
 
 html, body {
@@ -53,7 +53,7 @@ h1, h2, h3, h4 {
 }
 
 .dot-pattern {
-  background-image: radial-gradient(rgba(5,13,34,0.07) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(33,63,126,0.09) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 

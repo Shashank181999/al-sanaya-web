@@ -48,13 +48,6 @@ const process = [
   },
 ];
 
-const milestones = [
-  { year: "2004", title: "Founded", body: "Al Sanaya Technical Equipment LLC established in Abu Dhabi." },
-  { year: "2010", title: "Regional Expansion", body: "Opened branches in Dubai, Lebanon and Jordan." },
-  { year: "2016", title: "ISO Certified", body: "Achieved ISO 9001:2008 certification for quality management." },
-  { year: "Today", title: "50+ Specialists", body: "Trusted partner on landmark projects across the GCC." },
-];
-
 export default function AboutPage() {
   return (
     <>
@@ -184,37 +177,6 @@ export default function AboutPage() {
                     {step.body}
                   </p>
                 </div>
-              </StaggerItem>
-            ))}
-          </StaggerGroup>
-        </div>
-      </section>
-
-      <section className="relative py-16 md:py-24 bg-navy-900 text-white overflow-hidden">
-        <div className="absolute inset-0 grid-pattern opacity-30" />
-        <div className="container-x relative">
-          <Reveal className="max-w-3xl mb-12 md:mb-16">
-            <p className="text-slate-300 text-sm font-semibold uppercase tracking-[0.2em] mb-3">
-              Milestones
-            </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-              Two decades, four offices.
-            </h2>
-          </Reveal>
-          <StaggerGroup className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {milestones.map((m, i) => (
-              <StaggerItem
-                key={m.year}
-                direction={i < 2 ? "left" : "right"}
-                className="border-t-2 border-white/20 pt-6"
-              >
-                <p className="text-3xl md:text-4xl font-bold">{m.year}</p>
-                <p className="mt-3 text-base font-semibold text-white">
-                  {m.title}
-                </p>
-                <p className="mt-2 text-sm text-slate-400 leading-relaxed">
-                  {m.body}
-                </p>
               </StaggerItem>
             ))}
           </StaggerGroup>

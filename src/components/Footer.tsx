@@ -1,27 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-import { company, nav, offices } from "@/lib/content";
+import { company, nav } from "@/lib/content";
 
 export function Footer() {
   return (
     <footer className="bg-navy-900 text-slate-300 mt-16 md:mt-24">
       <div className="container-x py-12 md:py-16 grid gap-10 md:gap-12 sm:grid-cols-2 md:grid-cols-4">
         <div className="sm:col-span-2 md:col-span-2">
-          <div className="flex items-center gap-3 mb-5">
+          <div className="mb-5">
             <Image
-              src="/logo.png"
-              alt="Al Sanaya"
-              width={618}
-              height={800}
-              sizes="80px"
-              className="h-14 sm:h-16 w-auto object-contain bg-white rounded-md p-1.5"
+              src="/logo-white.png"
+              alt="Al Sanaya Technical Equipment L.L.C"
+              width={2325}
+              height={426}
+              sizes="(max-width: 768px) 240px, 320px"
+              className="h-12 sm:h-14 w-auto object-contain"
             />
-            <div className="leading-tight">
-              <p className="text-white font-bold tracking-wide">AL SANAYA</p>
-              <p className="text-slate-400 text-[10px] tracking-[0.18em] uppercase">
-                Technical Equipment L.L.C
-              </p>
-            </div>
           </div>
           <p className="text-sm leading-relaxed text-slate-400 max-w-md">
             {company.blurb}
@@ -61,25 +55,25 @@ export function Footer() {
             Head Office
           </h4>
           <p className="text-sm text-slate-400 leading-relaxed">
-            {offices[0].landmark}
+            Al Garhoud Medical Fitness Center
             <br />
-            {offices[0].poBox}
+            P.O. Box 46686
             <br />
-            {offices[0].country}
+            United Arab Emirates
           </p>
           <p className="text-sm mt-3">
             <a
-              href={`tel:${offices[0].tel.replace(/\s/g, "")}`}
+              href={`tel:${company.primaryPhone.replace(/\s/g, "")}`}
               className="text-slate-300 hover:text-slate-200"
             >
-              {offices[0].tel}
+              {company.primaryPhone}
             </a>
             <br />
             <a
-              href={`mailto:${offices[0].email}`}
+              href={`mailto:${company.email}`}
               className="text-slate-300 hover:text-slate-200"
             >
-              {offices[0].email}
+              {company.email}
             </a>
           </p>
         </div>

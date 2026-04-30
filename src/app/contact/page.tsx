@@ -89,29 +89,32 @@ export default function ContactPage() {
                   {o.landmark && <Row label="Landmark" value={o.landmark} />}
                   {o.poBox && <Row label="P.O. Box" value={o.poBox} />}
                   <Row label="Country" value={o.country} />
-                  <Row
-                    label="Phone"
-                    value={
-                      <a
-                        href={`tel:${o.tel.replace(/\s/g, "")}`}
-                        className="text-navy-900 hover:opacity-80 font-medium"
-                      >
-                        {o.tel}
-                      </a>
-                    }
-                  />
-                  {o.fax && <Row label="Fax" value={o.fax} />}
-                  <Row
-                    label="Email"
-                    value={
-                      <a
-                        href={`mailto:${o.email}`}
-                        className="text-navy-900 hover:opacity-80 font-medium"
-                      >
-                        {o.email}
-                      </a>
-                    }
-                  />
+                  {o.tel && (
+                    <Row
+                      label="Phone"
+                      value={
+                        <a
+                          href={`tel:${o.tel.replace(/\s/g, "")}`}
+                          className="text-navy-900 hover:opacity-80 font-medium"
+                        >
+                          {o.tel}
+                        </a>
+                      }
+                    />
+                  )}
+                  {o.email && (
+                    <Row
+                      label="Email"
+                      value={
+                        <a
+                          href={`mailto:${o.email}`}
+                          className="text-navy-900 hover:opacity-80 font-medium"
+                        >
+                          {o.email}
+                        </a>
+                      }
+                    />
+                  )}
                 </dl>
               </StaggerItem>
             ))}

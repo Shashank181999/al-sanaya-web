@@ -142,27 +142,27 @@ function ProjectCard({
       <button
         type="button"
         onClick={onOpen}
-        className={`group ${heightClass} flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-navy-900 hover:shadow-xl transition-all text-left w-full cursor-zoom-in`}
+        className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-navy-900 hover:shadow-xl transition-[box-shadow,border-color] duration-300 text-left w-full cursor-zoom-in"
       >
-        <div className="relative flex-1 min-h-0 bg-slate-100 overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
           <Image
             src={image}
             alt={title}
             fill
             sizes={sizes}
-            className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
           />
-          <span className="absolute top-3 right-3 h-9 w-9 rounded-full bg-white/90 text-navy-900 flex items-center justify-center opacity-0 group-hover:opacity-100 transition shadow-md">
+          <span className="absolute top-3 right-3 h-9 w-9 rounded-full bg-navy-900/85 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition shadow-md">
             <ZoomIcon />
           </span>
         </div>
-        <div className="p-4 sm:p-5 border-t border-slate-100">
+        <div className="px-5 sm:px-6 py-4 border-t border-slate-100">
           {subtitle && (
-            <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">
+            <p className="text-[10px] uppercase tracking-[0.22em] text-slate-500 font-semibold">
               {subtitle}
             </p>
           )}
-          <p className="text-base sm:text-lg font-bold text-navy-900 mt-1.5">
+          <p className="text-lg sm:text-xl font-bold text-navy-900 mt-1">
             {title}
           </p>
         </div>
@@ -213,7 +213,7 @@ function ProjectCard({
         sizes={sizes}
         className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-900/95 via-navy-900/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
       <div className="absolute top-4 right-4 h-9 w-9 rounded-full bg-white/15 backdrop-blur text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
         <ZoomIcon />
       </div>

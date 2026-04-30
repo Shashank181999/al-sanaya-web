@@ -9,34 +9,39 @@ export const company = {
   personnel: 50,
   brands: ["Linkk", "Megaduct"],
   email: "info@sanayate.com",
-  primaryPhone: "+971-2 674 1355",
+  primaryPhone: "+971 4 835 2303",
+  whatsapp: "XXXXXXXXXXXX",
 };
 
-export const offices = [
+export type Office = {
+  name: string;
+  poBox?: string;
+  country: string;
+  landmark?: string;
+  tel?: string;
+  email?: string;
+};
+
+export const offices: Office[] = [
   {
-    name: "Abu Dhabi — Main Office",
-    poBox: "P.O. Box 46686",
+    name: "Dubai — Main Office",
+    poBox: "46686",
     country: "United Arab Emirates",
-    landmark: "Baynunah Tower, Office #77",
-    tel: "+971-2 674 1355",
-    fax: "+971-2 674 1388",
+    landmark: "Al Garhoud Medical Fitness Center",
+    tel: "+971 4 835 2303",
     email: "info@sanayate.com",
   },
   {
-    name: "Dubai Branch",
-    poBox: "P.O. Box 46686",
+    name: "Abu Dhabi Branch",
+    poBox: "46686",
     country: "United Arab Emirates",
-    landmark: "Al Garhoud Medical Fitness Center",
-    tel: "+971-4 320 73 20",
+    landmark: "Baynunah Tower, Office #77",
     email: "info@sanayate.com",
   },
   {
     name: "Lebanon",
-    poBox: "P.O. Box 14-5426",
+    poBox: "14-5426",
     country: "Beirut, Lebanon",
-    tel: "+961-1 366286",
-    fax: "+961-1 366285",
-    email: "bdm.leb@sanayate.com",
   },
   {
     name: "Jordan",
@@ -44,7 +49,6 @@ export const offices = [
     landmark:
       "110, 1st Floor, Adil Al Qasim Center, Jabel Al Husein",
     tel: "+962 (06) 563 9233",
-    fax: "+962 (06) 563 9234",
     email: "gm@sanayate.com",
   },
 ];
@@ -81,20 +85,21 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  { name: "Marina 101", location: "Dubai, UAE", image: "/images/Marina-101.jpg" },
-  { name: "Moda Mall", location: "Bahrain", image: "/images/Moda-Mall-Bahrain.jpg" },
-  { name: "W Hotel Amman", location: "Jordan", image: "/images/W-Hotel-Amman-Jordan.jpg" },
-  { name: "Rotana", location: "Yemen / Syria", image: "/images/Rotana-yemen-Syria.jpg" },
-  { name: "Park Inn Hotel", location: "KSA", image: "/images/Park-inn-hotel-KSA.jpg" },
-  { name: "Fujairah Tower", location: "UAE", image: "/images/Fujairah-Tower.jpg" },
-  { name: "Escan Tower", location: "UAE", image: "/images/Escan-Tower.jpg" },
-  { name: "Bay Central Tower", location: "Dubai, UAE", image: "/images/Bay-Central-Tower-Dubai.jpg" },
-  { name: "Atria", location: "Dubai, UAE", image: "/images/Atria.jpg" },
-  { name: "Al Thuraya", location: "Qatar", image: "/images/Al-Thuraya-Qatar.jpg" },
-  { name: "Al Brooq Tower", location: "Qatar", image: "/images/Al-Brooq-Tower-Qatar.jpg" },
-  { name: "Al Batha Tower", location: "UAE", image: "/images/Al-Batha-Tower.jpg" },
-  { name: "Al Bateen Tower", location: "UAE", image: "/images/Al-Bateen-Tower.jpg" },
-  { name: "Al Ain Ahlia", location: "Dubai, UAE", image: "/images/Al-Ain-Ahlia-Dubai.jpg" },
+  { name: "Marina 101", location: "Dubai, UAE", image: "/images/projects/marina-101.jpg" },
+  { name: "W Hotel", location: "Amman, Jordan", image: "/images/projects/w-hotel-amman.jpg" },
+  { name: "Atria", location: "UAE", image: "/images/projects/atria.webp" },
+  { name: "Bay Central Tower", location: "UAE", image: "/images/projects/bay-central-tower.jpg" },
+  { name: "Levanto", location: "UAE", image: "/images/projects/levanto.jpg" },
+  { name: "OZone Residence", location: "UAE", image: "/images/projects/ozone-residence.jpg" },
+  { name: "Al Bateen Tower", location: "UAE", image: "/images/projects/al-bateen-tower.jpg" },
+  { name: "Al Batha Tower", location: "UAE", image: "/images/projects/al-batha-tower.jpg" },
+  { name: "Al Ain Ahlia", location: "UAE", image: "/images/projects/al-ain-ahlia.jpg" },
+  { name: "Fujairah Tower", location: "UAE", image: "/images/projects/fujairah-tower.webp" },
+  { name: "Escan Tower", location: "UAE", image: "/images/projects/escan-tower.webp" },
+  { name: "Al Thuraya", location: "Qatar", image: "/images/projects/al-thuraya.jpg" },
+  { name: "Al Brooq", location: "Qatar", image: "/images/projects/al-brooq.webp" },
+  { name: "Moda Mall", location: "Bahrain", image: "/images/projects/moda-mall.jpg" },
+  { name: "Rotana Yasmeen", location: "Syria", image: "/images/projects/rotana-yasmeen.jpg" },
 ];
 
 export const nav = [

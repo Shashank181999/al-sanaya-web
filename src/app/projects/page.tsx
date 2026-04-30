@@ -21,7 +21,7 @@ export default function ProjectsPage() {
       <section className="py-16 md:py-24">
         <div className="container-x">
           <StaggerGroup
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
             staggerChildren={0.06}
           >
             {projects.map((p, i) => {
@@ -34,6 +34,7 @@ export default function ProjectsPage() {
                     title={p.name}
                     subtitle={p.location}
                     variant="project"
+                    projectStyle="below"
                   />
                 </StaggerItem>
               );

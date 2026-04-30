@@ -74,7 +74,7 @@ function answer(input: string): { content: string; cta?: Message["cta"] } {
   if (/(contact|email|phone|call|reach|talk)/.test(q)) {
     return {
       content:
-        "You can reach our HQ at +971-2 674 1355 or email info@sanayate.com — or fill out the contact form and we'll respond within one business day.",
+        "You can reach our HQ at +971 4 835 2303 or email info@sanayate.com — or fill out the contact form and we'll respond within one business day.",
       cta: { label: "Contact us", href: "/contact" },
     };
   }
