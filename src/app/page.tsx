@@ -102,7 +102,7 @@ export default function HomePage() {
           <div className="inline-flex items-center gap-3 mb-5">
             <span className="h-px w-8 bg-white/40" />
             <p className="text-slate-200 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em]">
-              Since 2004 — Engineering Power
+              Since 2003 — Engineering Power
             </p>
           </div>
           <RevealText
@@ -232,7 +232,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <p className="text-[10px] text-slate-300 uppercase tracking-[0.18em]">Established</p>
-                    <p className="font-bold text-white text-lg leading-tight">2004</p>
+                    <p className="font-bold text-white text-lg leading-tight">2003</p>
                   </div>
                 </div>
                 <div className="hidden sm:flex items-center gap-2 text-[10px] text-slate-300 uppercase tracking-[0.18em]">

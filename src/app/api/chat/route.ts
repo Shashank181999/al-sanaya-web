@@ -9,7 +9,7 @@ const SYSTEM = `You are Sanaya Assistant, the friendly chat helper for Al Sanaya
 ABOUT THE COMPANY
 - Trading and contracting partner for the supply, testing and commissioning of electrical and mechanical equipment.
 - Serves the GCC and the wider MENA region (UAE, Qatar, Bahrain, KSA, Jordan, Syria, etc.).
-- Established 2004. 20+ years of experience.
+- Established 2003. 20+ years of experience.
 - Two flagship brands: Linkk and Megaduct sandwich-type busduct trunking systems.
 - ISO 9001 certified.
 - Office: Dubai (Al Garhoud Medical Fitness Center, P.O. Box 46686, UAE).
