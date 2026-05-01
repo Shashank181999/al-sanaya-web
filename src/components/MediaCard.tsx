@@ -253,10 +253,10 @@ function Lightbox({
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative bg-white rounded-2xl flex flex-col overflow-hidden shadow-2xl w-full"
+        className="relative bg-white rounded-2xl flex flex-col overflow-hidden shadow-2xl"
         style={{
           maxHeight: "calc(100dvh - 1.5rem)",
-          maxWidth: "min(95vw, 1100px)",
+          maxWidth: "min(95vw, 1280px)",
         }}
       >
         <button
@@ -279,7 +279,7 @@ function Lightbox({
           </svg>
         </button>
 
-        <div className="relative bg-slate-50 flex items-center justify-center w-full aspect-[4/3] sm:aspect-[16/10]">
+        <div className="relative bg-slate-50 flex items-center justify-center min-h-0 flex-1 overflow-hidden">
           {!loaded && (
             <div
               aria-hidden
@@ -292,12 +292,14 @@ function Lightbox({
             alt={title}
             decoding="async"
             onLoad={() => setLoaded(true)}
-            className={`absolute inset-0 m-auto max-w-full max-h-full transition-opacity duration-300 ${
+            className={`block transition-opacity duration-300 ${
               loaded ? "opacity-100" : "opacity-0"
             } ${variant === "project" ? "" : "p-4 sm:p-6"}`}
             style={{
               width: "auto",
               height: "auto",
+              maxWidth: "min(95vw, 1280px)",
+              maxHeight: "calc(100dvh - 8rem)",
               objectFit: "contain",
             }}
           />

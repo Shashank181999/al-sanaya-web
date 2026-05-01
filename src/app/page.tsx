@@ -62,9 +62,22 @@ const differentiators = [
 
 export default function HomePage() {
   const featuredProducts = products.slice(0, 6);
-  const homeProjects = projects
-    .slice(0, projects.findIndex((p) => p.name === "Al Thuraya") + 1)
-    .filter((p) => p.name !== "Escan Tower");
+  const featuredProjectNames = [
+    "Marina 101",
+    "Atria",
+    "Sky Hills Residences",
+    "Bay Central Towers",
+    "Mohammad Bin Rashed Library",
+    "Anti Doping Lab",
+    "Verde",
+    "The Address Hotel",
+    "Al Ezzel Power Plant",
+    "Levanto",
+    "OZone Residence",
+  ];
+  const homeProjects = featuredProjectNames
+    .map((name) => projects.find((p) => p.name === name))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
   return (
     <>
