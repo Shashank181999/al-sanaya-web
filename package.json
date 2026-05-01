@@ -9,8 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.66",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.0",
+    "ai": "^6.0.172",
     "framer-motion": "^12.38.0",
     "next": "16.2.4",
     "react": "19.2.4",

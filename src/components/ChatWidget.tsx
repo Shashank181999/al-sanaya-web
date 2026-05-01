@@ -16,80 +16,8 @@ const suggestions = [
   "What products do you offer?",
   "Where are your offices?",
   "Are you ISO certified?",
-  "Download brochures",
+  "Tell me about your projects",
 ];
-
-function answer(input: string): { content: string; cta?: Message["cta"] } {
-  const q = input.toLowerCase().trim();
-
-  if (/(product|busduct|busbar|catalog|catalogue|linkk|megaduct)/.test(q)) {
-    return {
-      content:
-        "We supply Linkk and Megaduct sandwich-type busduct trunking systems — including elbows, joints, plug-in units, tap-offs, hangers and more. Designed for commercial and industrial electrical distribution with certified short-circuit protection.",
-      cta: { label: "View all products", href: "/products" },
-    };
-  }
-  if (/(office|location|address|where|abu dhabi|dubai|lebanon|jordan|gcc)/.test(q)) {
-    return {
-      content:
-        "Our office is in Dubai (Al Garhoud Medical Fitness Center, P.O. Box 46686, UAE). We serve the GCC and the wider MENA region — our team responds within one business day.",
-      cta: { label: "See all offices", href: "/contact" },
-    };
-  }
-  if (/(iso|certif|quality|standard)/.test(q)) {
-    return {
-      content:
-        "Yes — we're ISO 9001:2008 certified and operate under a documented Quality Management System for the procurement of equipment and spares for the oil, gas and general industry.",
-      cta: { label: "View certificates", href: "/about" },
-    };
-  }
-  if (/(brochur|pdf|download|datasheet|profile)/.test(q)) {
-    return {
-      content:
-        "You can download our Company Profile and the full Sandwich-Type Busbar Catalogue.",
-      cta: { label: "Open downloads", href: "/products" },
-    };
-  }
-  if (/(project|reference|landmark|tower|hotel)/.test(q)) {
-    return {
-      content:
-        "Linkk and Megaduct have been delivered to landmark projects across the GCC and the wider MENA region — including Marina 101, Atria, Bay Central Tower, Al Bateen Tower, Fujairah Tower and many more.",
-      cta: { label: "See all projects", href: "/projects" },
-    };
-  }
-  if (/(price|cost|quote|enquir|inquiry|rfq)/.test(q)) {
-    return {
-      content:
-        "For a tailored quote, share your project specifications and our nearest office will get back within one business day.",
-      cta: { label: "Request a quote", href: "/contact" },
-    };
-  }
-  if (/(year|since|history|established|how long|experience)/.test(q)) {
-    return {
-      content:
-        "Al Sanaya Technical Equipment LLC was established in 2004 — over 20 years of supply, testing and commissioning experience across the GCC and the wider MENA region.",
-      cta: { label: "Our story", href: "/about" },
-    };
-  }
-  if (/(contact|email|phone|call|reach|talk)/.test(q)) {
-    return {
-      content:
-        "You can reach our HQ at +971 4 835 2303 or email info@sanayate.com — or fill out the contact form and we'll respond within one business day.",
-      cta: { label: "Contact us", href: "/contact" },
-    };
-  }
-  if (/(hi|hello|hey|salam|assalamu)/.test(q)) {
-    return {
-      content:
-        "Hi there! I can help with information about our products, offices, certifications or downloads. What would you like to know?",
-    };
-  }
-  return {
-    content:
-      "I can help with our products, offices, certifications, brochures or projects. For anything specific, our team responds within one business day.",
-    cta: { label: "Talk to our team", href: "/contact" },
-  };
-}
 
 export function ChatWidget() {
   const [open, setOpen] = useState(false);
@@ -111,29 +39,73 @@ export function ChatWidget() {
     }
   }, [messages, thinking, open]);
 
-  function send(text: string) {
-    if (!text.trim()) return;
+  async function send(text: string) {
+    const trimmed = text.trim();
+    if (!trimmed) return;
+
     const userMsg: Message = {
       id: crypto.randomUUID(),
       role: "user",
-      content: text.trim(),
+      content: trimmed,
     };
-    setMessages((m) => [...m, userMsg]);
+    const assistantId = crypto.randomUUID();
+    const history = [...messages, userMsg];
+
+    setMessages([...history, { id: assistantId, role: "assistant", content: "" }]);
     setInput("");
     setThinking(true);
-    const reply = answer(text);
-    setTimeout(() => {
-      setMessages((m) => [
-        ...m,
-        {
-          id: crypto.randomUUID(),
-          role: "assistant",
-          content: reply.content,
-          cta: reply.cta,
-        },
-      ]);
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: history.map((m) => ({ role: m.role, content: m.content })),
+        }),
+      });
+
+      if (!res.ok || !res.body) {
+        throw new Error(`Request failed: ${res.status}`);
+      }
+
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let acc = "";
+      let firstChunk = true;
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        acc += decoder.decode(value, { stream: true });
+        if (firstChunk) {
+          setThinking(false);
+          firstChunk = false;
+        }
+        setMessages((prev) =>
+          prev.map((m) => (m.id === assistantId ? { ...m, content: acc } : m)),
+        );
+      }
+      acc += decoder.decode();
+      setMessages((prev) =>
+        prev.map((m) => (m.id === assistantId ? { ...m, content: acc } : m)),
+      );
+    } catch (err) {
+      console.error(err);
+      setMessages((prev) =>
+        prev.map((m) =>
+          m.id === assistantId
+            ? {
+                ...m,
+                content:
+                  "Sorry — I couldn't reach the assistant just now. Please try again, or contact our team via the Contact page.",
+                cta: { label: "Contact us", href: "/contact" },
+              }
+            : m,
+        ),
+      );
+    } finally {
       setThinking(false);
-    }, 650);
+    }
   }
 
   return (
