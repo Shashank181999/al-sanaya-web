@@ -253,9 +253,8 @@ function Lightbox({
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative bg-white rounded-2xl flex flex-col overflow-hidden shadow-2xl"
+        className="relative bg-white rounded-2xl overflow-hidden shadow-2xl"
         style={{
-          maxHeight: "calc(100dvh - 1.5rem)",
           maxWidth: "min(95vw, 1280px)",
         }}
       >
@@ -279,7 +278,10 @@ function Lightbox({
           </svg>
         </button>
 
-        <div className="relative bg-slate-50 flex items-center justify-center min-h-0 flex-1 overflow-hidden">
+        <div
+          className="relative bg-slate-100 flex items-center justify-center"
+          style={{ minHeight: "320px" }}
+        >
           {!loaded && (
             <div
               aria-hidden
@@ -298,14 +300,14 @@ function Lightbox({
             style={{
               width: "auto",
               height: "auto",
-              maxWidth: "min(95vw, 1280px)",
-              maxHeight: "calc(100dvh - 8rem)",
+              maxWidth: "100%",
+              maxHeight: "calc(100dvh - 9rem)",
               objectFit: "contain",
             }}
           />
         </div>
 
-        <div className="px-5 sm:px-7 py-4 sm:py-5 border-t border-slate-100 flex-shrink-0">
+        <div className="px-5 sm:px-7 py-4 sm:py-5 border-t border-slate-100 bg-white">
           <div className="min-w-0">
             {subtitle && (
               <p className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-navy-900 font-semibold truncate">
