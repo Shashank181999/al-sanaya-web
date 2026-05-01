@@ -112,7 +112,7 @@ export function ChatWidget() {
     <>
       <motion.button
         type="button"
-        aria-label={open ? "Close chat" : "Talk to our team"}
+        aria-label={open ? "Close chat" : "Chat with us"}
         onClick={() => setOpen((v) => !v)}
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -167,7 +167,7 @@ export function ChatWidget() {
                 <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
               </svg>
               <span className="text-sm font-semibold whitespace-nowrap">
-                Our team
+                Chat with us
               </span>
             </motion.span>
           )}
