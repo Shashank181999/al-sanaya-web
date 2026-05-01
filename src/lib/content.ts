@@ -126,7 +126,6 @@ export const projects: Project[] = [
   { name: "Marina 101", location: "UAE", image: "/images/projects/marina-101.webp" },
   { name: "MBL Signature", location: "UAE", image: "/images/projects/mbl-signature.webp" },
   { name: "Millennium Hotel Expansion", location: "UAE", image: "/images/projects/millennium-hotel-expansion.webp" },
-  { name: "Moda Mall", location: "Bahrain", image: "/images/projects/moda-mall.webp" },
   { name: "Moda Mall Renovation", location: "Bahrain", image: "/images/projects/moda-mall-renovation.webp" },
   { name: "Mohammad Bin Rashed Library", location: "UAE", image: "/images/projects/mohammad-bin-rashed-library.webp" },
   { name: "My Tower", location: "UAE", image: "/images/projects/my-tower.webp" },
