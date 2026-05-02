@@ -275,7 +275,7 @@ function Bubble({ message }: { message: Message }) {
             : "bg-white text-slate-800 border border-slate-200 rounded-bl-sm"
         }`}
       >
-        <p>{message.content}</p>
+        <p className="whitespace-pre-wrap">{renderRich(message.content)}</p>
         {message.cta && (
           <a
             href={message.cta.href}
@@ -293,6 +293,31 @@ function Bubble({ message }: { message: Message }) {
       </div>
     </motion.div>
   );
+}
+
+function renderRich(text: string) {
+  const cleaned = text.replace(/^\s*\*\s+/gm, "• ");
+  const parts = cleaned.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|https?:\/\/\S+|[\w.+-]+@[\w-]+\.[\w.-]+|\+?\d[\d\s().-]{6,}\d)/g);
+
+  return parts.map((part, i) => {
+    if (!part) return null;
+    const bold = part.match(/^\*\*([^*]+)\*\*$/);
+    if (bold) return <strong key={i}>{bold[1]}</strong>;
+
+    const md = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (md) return <a key={i} href={md[2]} className="underline font-medium">{md[1]}</a>;
+
+    if (/^https?:\/\//.test(part)) {
+      return <a key={i} href={part} target="_blank" rel="noreferrer" className="underline font-medium">{part}</a>;
+    }
+    if (/^[\w.+-]+@[\w-]+\.[\w.-]+$/.test(part)) {
+      return <a key={i} href={`mailto:${part}`} className="underline font-medium">{part}</a>;
+    }
+    if (/^\+?\d[\d\s().-]{6,}\d$/.test(part)) {
+      return <a key={i} href={`tel:${part.replace(/[^\d+]/g, "")}`} className="underline font-medium">{part}</a>;
+    }
+    return <span key={i}>{part}</span>;
+  });
 }
 
 function ThinkingBubble() {
