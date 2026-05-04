@@ -6,7 +6,7 @@ import { projects } from "@/lib/content";
 export const metadata = {
   title: "Projects",
   description:
-    "Linkk and Megaduct busduct trunking systems delivered across the GCC and the wider MENA region — a selection of our prestigious project references.",
+    "Electrical and mechanical equipment supply, testing & commissioning across the GCC and MENA region — including Linkk & Megaduct busduct delivered to landmark towers, hotels, hospitals and power plants.",
 };
 
 export default function ProjectsPage() {
@@ -15,7 +15,7 @@ export default function ProjectsPage() {
       <PageHero
         eyebrow="Projects"
         title="Powering landmark developments across the GCC and MENA region."
-        description="Linkk and Megaduct busduct trunking systems have successfully been delivered to many projects across the GCC and the wider MENA region."
+        description="Towers, hotels, hospitals, power plants and oil & gas installations — supplied, tested and commissioned by Al Sanaya, with Linkk & Megaduct busduct featured on many of these projects."
       />
 
       <section className="py-16 md:py-24">

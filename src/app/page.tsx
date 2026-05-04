@@ -6,53 +6,13 @@ import { RevealText } from "@/components/RevealText";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { BrandMarquee } from "@/components/BrandMarquee";
 import { Hero3D } from "@/components/Hero3D";
+import { ProductShowcase3D } from "@/components/ProductShowcase3D";
+import { EquipmentShowcase3D } from "@/components/EquipmentShowcase3D";
+import { ServicesShowcase } from "@/components/ServicesShowcase";
+import { CapabilitiesShowcase } from "@/components/CapabilitiesShowcase";
 import { ScrollHint } from "@/components/ScrollHint";
 import { CatalogCarousel } from "@/components/CatalogCarousel";
 import { catalogs, company, products, projects } from "@/lib/content";
-
-const services = [
-  {
-    title: "Supply & Trading",
-    body: "Authorized supply of Linkk and Megaduct busduct trunking systems with full GCC and MENA inventory backing.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 7l9-4 9 4-9 4-9-4z" />
-        <path d="M3 12l9 4 9-4" />
-        <path d="M3 17l9 4 9-4" />
-      </svg>
-    ),
-  },
-  {
-    title: "Testing & Commissioning",
-    body: "On-shore and off-shore electrical and mechanical commissioning for oil, gas and utility projects.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 11l3 3L22 4" />
-        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
-      </svg>
-    ),
-  },
-  {
-    title: "Engineering Services",
-    body: "Specification, layout and custom engineering tailored to commercial and industrial installations.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14.7 6.3a4 4 0 015.66 5.66l-9.19 9.19a2 2 0 01-1.41.59H6v-3.76a2 2 0 01.59-1.41z" />
-        <path d="M13 8l3 3" />
-      </svg>
-    ),
-  },
-  {
-    title: "Installation & Contracting",
-    body: "Turn-key contracting from delivery through installation and final handover, across the GCC and MENA region.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 9l9-6 9 6v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-        <path d="M9 21V12h6v9" />
-      </svg>
-    ),
-  },
-];
 
 const differentiators = [
   { value: 20, suffix: "+", label: "Years of Service" },
@@ -136,7 +96,7 @@ export default function HomePage() {
             <div className="flex items-center gap-3">
               <span className="h-px w-10 bg-white/40" />
               <span className="uppercase tracking-[0.2em] text-xs">
-                Linkk · Megaduct Authorized Partner
+                Oil &amp; Gas · Utilities · Construction · Authorized Linkk &amp; Megaduct Partner
               </span>
             </div>
           </div>
@@ -144,44 +104,231 @@ export default function HomePage() {
         <ScrollHint />
       </section>
 
-      <BrandMarquee />
-
-      <section className="py-16 md:py-24">
-        <div className="container-x">
-          <Reveal className="max-w-3xl mb-12 md:mb-16">
-            <p className="text-navy-900 text-sm font-semibold uppercase tracking-[0.2em] mb-3">
-              What We Do
-            </p>
+      <section className="relative py-20 md:py-28 bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden">
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-navy-900/10 to-transparent"
+        />
+        <div
+          aria-hidden
+          className="absolute -top-32 left-1/2 -translate-x-1/2 h-[520px] w-[880px] rounded-full bg-navy-900/[0.06] blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 dot-pattern opacity-30"
+        />
+        <div className="container-x relative grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <Reveal direction="left">
+            <div className="inline-flex items-center gap-3 mb-5">
+              <span className="h-px w-8 bg-navy-900/40" />
+              <p className="text-navy-900 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em]">
+                Industries We Power
+              </p>
+            </div>
             <RevealText
               as="h2"
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900 block"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-navy-900 leading-[1.05] block"
             >
-              Four pillars of service across the GCC and MENA region.
+              One partner for every sector that keeps the region running.
             </RevealText>
-            <p className="mt-5 text-slate-600 leading-relaxed text-base md:text-lg">
-              From product specification to final commissioning — we deliver every stage of an electrical project under one roof.
+            <p className="mt-6 text-slate-600 leading-relaxed text-base md:text-lg max-w-md">
+              Off-shore platforms, on-shore facilities, utility grids and
+              landmark towers — supplied, installed, tested and commissioned
+              by Al Sanaya.
+            </p>
+            <div className="mt-8 md:mt-10 flex flex-wrap gap-4 items-center">
+              <Link href="/about" className="btn-primary">
+                What we do <ArrowRight />
+              </Link>
+              <Link
+                href="/projects"
+                className="text-navy-900 font-semibold text-sm hover:opacity-80 inline-flex items-center gap-2"
+              >
+                See projects <ArrowRight />
+              </Link>
+            </div>
+          </Reveal>
+          <Reveal direction="right" delay={0.15} className="hidden md:block">
+            <ProductShowcase3D className="w-full h-[500px] md:h-[600px]" />
+          </Reveal>
+        </div>
+      </section>
+
+      <BrandMarquee />
+
+      <ServicesShowcase />
+
+      <section className="relative py-20 md:py-28 bg-gradient-to-b from-white via-slate-50/70 to-white overflow-hidden">
+        <div
+          aria-hidden
+          className="absolute inset-0 dot-pattern opacity-40"
+        />
+        <div
+          aria-hidden
+          className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[420px] w-[820px] rounded-full bg-navy-900/[0.04] blur-3xl"
+        />
+        <div className="container-x relative">
+          <Reveal className="max-w-3xl mb-10 md:mb-14">
+            <div className="inline-flex items-center gap-3 mb-5">
+              <span className="h-px w-8 bg-navy-900/40" />
+              <p className="text-navy-900 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em]">
+                What We Supply
+              </p>
+            </div>
+            <RevealText
+              as="h2"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-navy-900 leading-[1.05] block"
+            >
+              Equipment for every site we serve.
+            </RevealText>
+            <p className="mt-5 text-slate-600 leading-relaxed text-base md:text-lg max-w-2xl">
+              Switchgear and electrical components, pumps and mechanical
+              spares, busduct trunking and oilfield valves — procured,
+              installed, tested and commissioned across the GCC and MENA
+              region.
             </p>
           </Reveal>
-          <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-            {services.map((s, i) => {
-              const dirs = ["left", "up", "up", "right"] as const;
-              return (
-                <StaggerItem key={s.title} direction={dirs[i]}>
-                  <div className="group relative h-full bg-white border border-slate-200 hover:border-navy-900 rounded-2xl p-7 transition-all hover:-translate-y-1 hover:shadow-xl">
-                    <div className="h-12 w-12 rounded-xl bg-navy-900 text-white flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <span className="h-6 w-6 block">{s.icon}</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-navy-900 mt-5">
-                      {s.title}
-                    </h3>
-                    <p className="mt-3 text-slate-600 leading-relaxed text-sm">
-                      {s.body}
+
+          <Reveal direction="up" className="mb-12 md:mb-16">
+            <div className="relative rounded-3xl bg-gradient-to-b from-slate-100/80 via-white to-slate-100/60 ring-1 ring-slate-200/70 shadow-sm overflow-hidden">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 dot-pattern opacity-30"
+              />
+              <EquipmentShowcase3D className="hidden md:block relative w-full h-[360px] md:h-[420px]" />
+              <div className="relative grid grid-cols-2 md:grid-cols-4 gap-x-2 gap-y-4 px-4 sm:px-6 md:px-10 pb-8 md:pb-10 -mt-4 md:-mt-6">
+                {[
+                  { name: "Switchgear", category: "Electrical", note: "Distribution panels, gear, cabling" },
+                  { name: "Pumps & Motors", category: "Mechanical", note: "Process plants, utilities" },
+                  { name: "Busduct", category: "Linkk · Megaduct", note: "Sandwich-type trunking" },
+                  { name: "Valves", category: "Oilfield", note: "Onshore & offshore" },
+                ].map((it, i) => (
+                  <div
+                    key={it.name}
+                    className="relative pl-4 border-l-2 border-navy-900/30"
+                    style={{ animationDelay: `${i * 60}ms` }}
+                  >
+                    <p className="text-sm sm:text-base font-bold text-navy-900 leading-tight">
+                      {it.name}
+                    </p>
+                    <p className="text-[10px] sm:text-xs text-navy-900/70 uppercase tracking-[0.18em] mt-1">
+                      {it.category}
+                    </p>
+                    <p className="text-xs text-slate-500 mt-2 hidden sm:block">
+                      {it.note}
                     </p>
                   </div>
-                </StaggerItem>
-              );
-            })}
-          </StaggerGroup>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+          <CapabilitiesShowcase />
+          <Reveal className="mt-14 md:mt-20">
+            <div className="relative rounded-3xl bg-gradient-to-br from-white via-slate-50/80 to-white ring-1 ring-slate-200/80 shadow-[0_20px_60px_-30px_rgba(33,63,126,0.25)] overflow-hidden">
+              <div
+                aria-hidden
+                className="absolute inset-0 dot-pattern opacity-30 pointer-events-none"
+              />
+              <div
+                aria-hidden
+                className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-navy-900/[0.04] blur-3xl pointer-events-none"
+              />
+              <div
+                aria-hidden
+                className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-navy-900/[0.04] blur-3xl pointer-events-none"
+              />
+
+              <div className="relative px-6 sm:px-10 md:px-14 pt-8 md:pt-12 pb-2 text-center max-w-3xl mx-auto">
+                <div className="inline-flex items-center gap-3 mb-4">
+                  <span className="h-px w-8 bg-navy-900/40" />
+                  <p className="text-navy-900 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.25em]">
+                    Tested &amp; Certified
+                  </p>
+                  <span className="h-px w-8 bg-navy-900/40" />
+                </div>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 leading-tight">
+                  Verified by the world&apos;s leading testing authorities.
+                </h3>
+                <p className="mt-3 text-sm md:text-base text-slate-600 leading-relaxed">
+                  Independently tested in accordance with the strictest
+                  international standards for electrical distribution.
+                </p>
+              </div>
+
+              <div className="relative px-4 sm:px-8 md:px-12 pt-8 md:pt-10 pb-8 md:pb-10">
+                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 md:gap-4">
+                  {[
+                    { mark: "ASTA", region: "United Kingdom" },
+                    { mark: "KEMA", region: "Netherlands" },
+                    { mark: "UL", region: "United States" },
+                    { mark: "CPRI", region: "India" },
+                    { mark: "PSB", region: "Singapore" },
+                    { mark: "SIRIM", region: "Malaysia" },
+                    { mark: "CCC", region: "China" },
+                  ].map((b) => (
+                    <div
+                      key={b.mark}
+                      className="group relative text-center px-3 py-4 rounded-xl bg-white ring-1 ring-slate-200 hover:ring-navy-900 hover:-translate-y-0.5 hover:shadow-md transition-all"
+                    >
+                      <div className="absolute top-2 right-2 h-4 w-4 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg
+                          width="10"
+                          height="10"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M5 12l5 5L20 7" />
+                        </svg>
+                      </div>
+                      <p className="text-navy-900 text-base font-bold tracking-[0.18em] leading-none">
+                        {b.mark}
+                      </p>
+                      <p className="mt-2 text-[10px] text-slate-500 uppercase tracking-[0.14em]">
+                        {b.region}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative border-t border-slate-200 bg-slate-50/60 px-6 sm:px-10 md:px-14 py-5 md:py-6">
+                <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-6">
+                  <p className="text-[10px] sm:text-xs text-navy-900 font-semibold uppercase tracking-[0.22em] shrink-0">
+                    Compliance
+                  </p>
+                  <div className="flex flex-wrap gap-x-2 gap-y-2">
+                    {[
+                      { family: "IEC", code: "61439-6 : 2012" },
+                      { family: "IEC", code: "60439-1 & 2 : 2009" },
+                      { family: "IEC", code: "60331" },
+                      { family: "IEC", code: "60529" },
+                      { family: "BS", code: "5486 Part 2 : 1990" },
+                    ].map((s) => (
+                      <span
+                        key={s.code}
+                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white ring-1 ring-slate-200 text-[11px] sm:text-xs"
+                      >
+                        <span className="text-navy-900 font-bold tracking-[0.12em]">
+                          {s.family}
+                        </span>
+                        <span className="text-slate-600">{s.code}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal className="mt-10 md:mt-14 text-center">
+            <Link href="/products" className="btn-primary">
+              View product range <ArrowRight />
+            </Link>
+          </Reveal>
         </div>
       </section>
 
@@ -254,17 +401,19 @@ export default function HomePage() {
             </RevealText>
             <p className="mt-5 md:mt-6 text-slate-600 leading-relaxed">
               Al Sanaya Technical Equipment LLC has grown into a trusted
-              supplier and contractor for the oil &amp; gas, utilities and
-              construction sectors. Headquartered in Dubai and serving the GCC
-              and the wider MENA region, we deliver high-quality busduct,
-              electrical and mechanical equipment built to perform.
+              trading and contracting partner for the oil &amp; gas, utilities
+              and construction sectors — supplying, testing, commissioning and
+              installing electrical and mechanical equipment on-shore and
+              off-shore across the GCC and wider MENA region.
             </p>
             <p className="mt-4 text-slate-600 leading-relaxed">
-              We are the authorized partner for the{" "}
+              Among our flagship product lines, we are the authorized partner
+              for the{" "}
               <strong className="text-navy-900">Linkk</strong> and{" "}
               <strong className="text-navy-900">Megaduct</strong> busduct
-              trunking systems — engineered in Malaysia and trusted on the
-              region&apos;s most prestigious projects.
+              trunking systems — alongside a broader portfolio of industrial
+              and oilfield equipment trusted on the region&apos;s most
+              prestigious projects.
             </p>
             <div className="mt-7 md:mt-8 flex flex-wrap gap-4 items-center">
               <Link href="/about" className="btn-primary">
@@ -322,14 +471,18 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 md:gap-6 mb-10 md:mb-12">
               <div>
                 <p className="text-navy-900 text-sm font-semibold uppercase tracking-[0.2em] mb-3">
-                  Components
+                  Featured product line
                 </p>
                 <RevealText
                   as="h2"
                   className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900 max-w-xl block"
                 >
-                  Busduct components for every installation.
+                  Linkk &amp; Megaduct busduct components.
                 </RevealText>
+                <p className="mt-3 text-slate-600 max-w-xl">
+                  One of several equipment categories we supply — see the full
+                  range across electrical, mechanical and oilfield products.
+                </p>
               </div>
               <Link
                 href="/products"

@@ -7,7 +7,7 @@ import { catalogs, products } from "@/lib/content";
 export const metadata = {
   title: "Products",
   description:
-    "Linkk and Megaduct busduct trunking systems — designed for commercial and industrial electrical distribution with certified short-circuit protection.",
+    "Industrial and oilfield equipment, electrical and mechanical spares, and authorized Linkk & Megaduct busduct trunking — supplied across the GCC and MENA region.",
 };
 
 const features = [
@@ -64,28 +64,30 @@ export default function ProductsPage() {
     <>
       <PageHero
         eyebrow="Products"
-        title="Busduct trunking, engineered for performance."
-        description="The Linkk and Megaduct busduct systems — designed for commercial and industrial electrical distribution with certified short-circuit protection."
+        title="Equipment that powers oil & gas, utilities and construction."
+        description="From industrial and oilfield equipment to electrical and mechanical spares — including the authorized Linkk & Megaduct busduct trunking range — supplied across the GCC and the wider MENA region."
       />
 
       <section className="py-16 md:py-24">
         <div className="container-x grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <Reveal direction="left">
             <p className="text-navy-900 text-sm font-semibold uppercase tracking-[0.2em] mb-3 md:mb-4">
-              Our Brands
+              Flagship Product Line
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900">
-              Linkk &amp; Megaduct.
+              Linkk &amp; Megaduct busduct.
             </h2>
             <p className="mt-5 text-slate-600 leading-relaxed">
               Developed by Linkk Busway Systems (M) SDN BHD — successor to
               Megaduct Technology SDN BHD (established 1992, formerly Mayduct
-              Technology SDN BHD) — our busduct systems carry forward decades
-              of production expertise and proprietary technology.
+              Technology SDN BHD) — these busduct systems carry forward decades
+              of production expertise and proprietary technology, and are the
+              centrepiece of our authorized product portfolio.
             </p>
             <p className="mt-4 text-slate-600 leading-relaxed">
-              Designed for commercial and industrial electrical distribution
-              applications with rigorous short-circuit protection ratings.
+              Alongside busduct we supply a wider range of industrial and
+              oilfield equipment, electrical components and mechanical spares
+              for the oil, gas and general industry.
             </p>
           </Reveal>
           <Reveal direction="right" delay={0.15}>
@@ -271,6 +273,69 @@ export default function ProductsPage() {
         </div>
       </section>
 
+      <section className="py-16 md:py-24 bg-slate-50">
+        <div className="container-x">
+          <Reveal className="max-w-3xl mb-10 md:mb-14">
+            <p className="text-navy-900 text-sm font-semibold uppercase tracking-[0.2em] mb-3">
+              Beyond Busduct
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900">
+              The wider equipment portfolio we supply.
+            </h2>
+            <p className="mt-5 text-slate-600 leading-relaxed">
+              Al Sanaya is a trading and contracting partner for the oil &amp;
+              gas, utilities and construction sectors — supplying procurement
+              and spares across electrical and mechanical scope, on-shore and
+              off-shore.
+            </p>
+          </Reveal>
+          <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+            {[
+              {
+                title: "Industrial & Oilfield Equipment",
+                body: "Procurement of equipment and spares for the oil, gas and general industry.",
+              },
+              {
+                title: "Electrical Components & Spares",
+                body: "Switchgear, cabling, distribution gear and electrical spares for industrial sites.",
+              },
+              {
+                title: "Mechanical Equipment & Spares",
+                body: "Pumps, valves, fittings and mechanical spares for utilities and process plants.",
+              },
+              {
+                title: "Testing & Commissioning",
+                body: "On-shore and off-shore electrical and mechanical testing and commissioning support.",
+              },
+              {
+                title: "On-shore / Off-shore Supply",
+                body: "Project supply across construction, utilities and oil & gas, in the GCC and MENA region.",
+              },
+              {
+                title: "Custom Engineering & Layout",
+                body: "Specification, layout and configuration tailored to your load profile and site conditions.",
+              },
+            ].map((c, i) => (
+              <StaggerItem
+                key={c.title}
+                direction={i % 3 === 0 ? "left" : i % 3 === 2 ? "right" : "up"}
+                className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 hover:border-navy-900 hover:shadow-xl transition-[box-shadow,border-color] duration-300 h-full"
+              >
+                <div className="h-10 w-10 rounded-lg bg-navy-900/10 text-navy-900 flex items-center justify-center font-bold text-sm">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <h3 className="mt-4 text-lg font-bold text-navy-900">
+                  {c.title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                  {c.body}
+                </p>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+        </div>
+      </section>
+
       <section className="py-16 md:py-20 bg-navy-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 grid-pattern opacity-25" />
         <div className="container-x relative">
@@ -279,7 +344,7 @@ export default function ProductsPage() {
               Application Sectors
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-              Where our systems power the load.
+              Where our equipment powers the load.
             </h2>
           </Reveal>
           <StaggerGroup className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
